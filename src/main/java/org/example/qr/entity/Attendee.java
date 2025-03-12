@@ -1,9 +1,11 @@
 package org.example.qr.entity;
 
 import jakarta.persistence.*;
-@lombok.Data
+import lombok.Data;
+import java.time.LocalDateTime;
 
 @Entity
+@Data
 public class Attendee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +16,14 @@ public class Attendee {
 
     private String name;
     private String email;
-    private boolean checkedIn;
+    private boolean checkedIn; // Ensure this property exists
+    
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
-    // Getters and Setters
+    @PrePersist
+    @PreUpdate
+    public void updateTimestamp() {
+        updatedAt = LocalDateTime.now();
+    }
 }
