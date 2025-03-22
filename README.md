@@ -1,8 +1,8 @@
-# QR Code Attendance System
+# QR Code Ticket System 
 
 **1. Overview**
 
-This project implements a QR code-based attendance system using Spring Boot.  It allows users to check in using QR codes, and provides administrative tools for managing attendees and generating reports.
+This project implements a QR code-based ticket system using Spring Boot.  It allows users to check in using QR codes, and provides administrative tools for managing attendees and generating reports.
 
 **2. Project Structure**
 
